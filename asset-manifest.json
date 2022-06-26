@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/done_mern_reactapp/static/css/main.bdf44141.css",
+    "main.js": "/done_mern_reactapp/static/js/main.1cf58e58.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/done_mern_reactapp/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/landing.jpg": "/done_mern_reactapp/static/media/landing.1a58e42df4243c73b77c.jpg",
+    "index.html": "/done_mern_reactapp/index.html",
+    "static/media/trash.svg": "/done_mern_reactapp/static/media/trash.3b9cd8b2d5e09dfaaa34c9dc95f210c5.svg",
+    "static/media/logout.svg": "/done_mern_reactapp/static/media/logout.8e64276b680bcce5278d2d7049274d61.svg",
+    "static/media/pencil.svg": "/done_mern_reactapp/static/media/pencil.32e0a189bcc38db6b4f8bb5fe080caf0.svg",
+    "static/media/logo.svg": "/done_mern_reactapp/static/media/logo.d8417b80edfea79f55f5c0f464ac6547.svg",
+    "static/media/play-btn.svg": "/done_mern_reactapp/static/media/play-btn.7e480c9f009483319e585d7e2b10ec11.svg",
+    "static/media/plus-circle-fill.svg": "/done_mern_reactapp/static/media/plus-circle-fill.a9d0f92d5e2f616b2f2d637e1bbc4b0e.svg",
+    "main.bdf44141.css.map": "/done_mern_reactapp/static/css/main.bdf44141.css.map",
+    "main.1cf58e58.js.map": "/done_mern_reactapp/static/js/main.1cf58e58.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/done_mern_reactapp/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bdf44141.css",
+    "static/js/main.1cf58e58.js"
+  ]
+}
