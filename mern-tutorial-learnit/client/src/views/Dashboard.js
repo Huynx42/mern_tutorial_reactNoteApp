@@ -45,11 +45,11 @@ const Dashboard = () => {
 		body = (
 			<>
 				<Card className='text-center mx-5 my-5'>
-					<Card.Header as='h1'>Hi {username}</Card.Header>
+					<Card.Header as='h1'>{username}</Card.Header>
 					<Card.Body>
-						<Card.Title>Welcome to LearnIt</Card.Title>
+						<Card.Title>Welcome to note website</Card.Title>
 						<Card.Text>
-							Click the button below to track your first skill to learn
+							Nhấn vào button bên dưới để theo dõi chương trình bạn đang theo học
 						</Card.Text>
 						<Button
 							variant='primary'
@@ -64,24 +64,31 @@ const Dashboard = () => {
 	} else {
 		body = (
 			<>
-				<Row className='row-cols-1 row-cols-md-3 g-4 mx-auto mt-3'>
-					{posts.map(post => (
-						<Col key={post._id} className='my-2'>
+				<Row className='row-cols-1 row-cols-md-4 g-3 mx-auto mt-3'>
+					{posts.map(post => {
+						if (post.title.length >= 10) {
+							post.title = post.title.slice(0,15).concat('...')
+						};
+						if (post.description.length >= 40) {
+							post.description = post.description.slice(0,40).concat('...')
+						};
+						return <Col key={post._id} className='my-2'>
 							<SinglePost post={post} />
 						</Col>
-					))}
+						}
+					)}
 				</Row>
 
 				{/* Open Add Post Modal */}
 				<OverlayTrigger
 					placement='left'
-					overlay={<Tooltip>Add a new thing to learn</Tooltip>}
+					overlay={<Tooltip>Tạo chương trình học video/book ...</Tooltip>}
 				>
 					<Button
 						className='btn-floating'
 						onClick={setShowAddPostModal.bind(this, true)}
 					>
-						<img src={addIcon} alt='add-post' width='60' height='60' />
+						<img src={addIcon} alt='add-post' width='50' height='50' />
 					</Button>
 				</OverlayTrigger>
 			</>

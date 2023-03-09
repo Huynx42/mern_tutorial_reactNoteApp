@@ -18,13 +18,13 @@ const ActionButtons = ({ url, _id }) => {
 	return (
 		<>
 			<Button className='post-button' href={url} target='_blank'>
-				<img src={playIcon} alt='play' width='34' height='34' />
+				<img src={playIcon} alt='play' width='20' height='20' />
 			</Button>
 			<Button className='post-button' onClick={choosePost.bind(this, _id)}>
-				<img src={editIcon} alt='edit' width='34' height='34' />
+				<img src={editIcon} alt='edit' width='20' height='20' />
 			</Button>
 			<Button className='post-button' onClick={deletePost.bind(this, _id)}>
-				<img src={deleteIcon} alt='delete' width='34' height='34' />
+				<img src={deleteIcon} alt='delete' width='20' height='20' />
 			</Button>
 		</>
 	)

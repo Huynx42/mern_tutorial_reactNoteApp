@@ -8,10 +8,11 @@ const About = () => {
 			<Col className='text-center'>
 				<Button
 					variant='primary'
-					href='https://www.youtube.com/results?search_query=reactjs'
+					href='https://www.facebook.com/ouddupo/'
 					size='lg'
+					target="_blank"
 				>
-					Visit youtube channel for more tutorials about ReactJS
+					Để liên lạc với tôi click vào đây nhé!
 				</Button>
 			</Col>
 		</Row>

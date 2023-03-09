@@ -3,15 +3,26 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Badge from 'react-bootstrap/Badge'
 import ActionButtons from './ActionButtons'
+import { PostContext } from '../../contexts/PostContext'
+import { useContext } from 'react'
 
-const SinglePost = ({ post: { _id, status, title, description, url } }) => (
-	<Card
+const SinglePost = ({ post: { _id, status, title, description, url } }) => {
+	const { findPost, setShowUpdatePostModal } = useContext(
+		PostContext
+	);
+
+	const choosePost = postId => {
+		findPost(postId)
+		setShowUpdatePostModal(true)
+	};
+
+	return <Card
 		className='shadow'
 		border={
 			status === 'LEARNED'
 				? 'success'
 				: status === 'LEARNING'
-				? 'warning'
+				? 'light'
 				: 'danger'
 		}
 	>
@@ -21,26 +32,29 @@ const SinglePost = ({ post: { _id, status, title, description, url } }) => (
 					<Col>
 						<p className='post-title'>{title}</p>
 						<Badge
+							bg="light"
 							pill
 							variant={
 								status === 'LEARNED'
 									? 'success'
 									: status === 'LEARNING'
-									? 'warning'
+									? 'light'
 									: 'danger'
 							}
+							className='post-button'
+							onClick={choosePost.bind(this, _id)}
 						>
 							{status}
 						</Badge>
 					</Col>
-					<Col className='text-right'>
-						<ActionButtons url={url} _id={_id} />
-					</Col>
 				</Row>
 			</Card.Title>
 			<Card.Text>{description}</Card.Text>
+			<Col className='text-right'>
+				<ActionButtons url={url} _id={_id} />
+			</Col>
 		</Card.Body>
 	</Card>
-)
+}
 
 export default SinglePost

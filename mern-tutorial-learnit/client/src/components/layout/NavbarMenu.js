@@ -56,14 +56,14 @@ const NavbarMenu = () => {
 					</Nav.Link>
 					<Button
 						variant='secondary'
-						className='font-weight-bolder'
+						className='font-weight-bolder text-white'
 						onClick={logout}
 					>
 						<img
 							src={logoutIcon}
 							alt='logoutIcon'
-							width=''
-							height=''
+							width='32'
+							height='32'
 							className='mr-2'
 						/>
 						Logout

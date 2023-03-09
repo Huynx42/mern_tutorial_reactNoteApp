@@ -44,14 +44,14 @@ const UpdatePostModal = () => {
 	return (
 		<Modal show={showUpdatePostModal} onHide={closeDialog}>
 			<Modal.Header closeButton>
-				<Modal.Title>Making progress?</Modal.Title>
+				<Modal.Title>Chỉnh sửa tiến độ</Modal.Title>
 			</Modal.Header>
 			<Form onSubmit={onSubmit}>
 				<Modal.Body>
 					<Form.Group>
 						<Form.Control
 							type='text'
-							placeholder='Title'
+							placeholder='Tiêu đề'
 							name='title'
 							required
 							aria-describedby='title-help'
@@ -59,14 +59,14 @@ const UpdatePostModal = () => {
 							onChange={onChangeUpdatedPostForm}
 						/>
 						<Form.Text id='title-help' muted>
-							Required
+							Mô tả:
 						</Form.Text>
 					</Form.Group>
 					<Form.Group>
 						<Form.Control
 							as='textarea'
 							rows={3}
-							placeholder='Description'
+							placeholder='Mô tả chi tiết'
 							name='description'
 							value={description}
 							onChange={onChangeUpdatedPostForm}
