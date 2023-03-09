@@ -64,7 +64,7 @@ const Dashboard = () => {
 	} else {
 		body = (
 			<>
-				<Row className='row-cols-1 row-cols-md-4 g-3 mx-auto mt-3'>
+				<Row className='row-cols-1 row-cols-md-4 g-3 mx-auto mt-0'>
 					{posts.map(post => {
 						if (post.title.length >= 10) {
 							post.title = post.title.slice(0,15).concat('...')

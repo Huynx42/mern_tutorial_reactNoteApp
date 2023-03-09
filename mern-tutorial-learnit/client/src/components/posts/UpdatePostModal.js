@@ -19,10 +19,11 @@ const UpdatePostModal = () => {
 
 	useEffect(() => setUpdatedPost(post), [post])
 
-	const { title, description, url, status } = updatedPost
+	const { title, description, typeDesc, url, status } = updatedPost
 
-	const onChangeUpdatedPostForm = event =>
+	const onChangeUpdatedPostForm = event => {
 		setUpdatedPost({ ...updatedPost, [event.target.name]: event.target.value })
+	}
 
 	const closeDialog = () => {
 		setUpdatedPost(post)
@@ -82,12 +83,29 @@ const UpdatePostModal = () => {
 						/>
 					</Form.Group>
 					<Form.Group>
+						<Form.Label column sm="2">
+							Thể loại:
+						</Form.Label>
+						<Form.Control
+							as='select'
+							value={typeDesc}
+							name='typeDesc'
+							onChange={onChangeUpdatedPostForm}
+						>
+							<option value='VIDEO'>VIDEO</option>
+							<option value='BOOK'>BOOK</option>
+						</Form.Control>
+					</Form.Group>
+					<Form.Group>
+						<Form.Label column sm="2">
+							Trạng thái:
+						</Form.Label>
 						<Form.Control
 							as='select'
 							value={status}
 							name='status'
 							onChange={onChangeUpdatedPostForm}
-						>
+							>
 							<option value='TO LEARN'>TO LEARN</option>
 							<option value='LEARNING'>LEARNING</option>
 							<option value='LEARNED'>LEARNED</option>

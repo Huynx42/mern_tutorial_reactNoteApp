@@ -23,7 +23,7 @@ router.get('/', verifyToken, async (req, res) => {
 // @desc Create post
 // @access Private
 router.post('/', verifyToken, async (req, res) => {
-	const { title, description, url, status } = req.body
+	const { title, description, typeDesc, url, status } = req.body
 
 	// Simple validation
 	if (!title)
@@ -35,6 +35,7 @@ router.post('/', verifyToken, async (req, res) => {
 		const newPost = new Post({
 			title,
 			description,
+			typeDesc: typeDesc || 'VIDEO',
 			url: url.startsWith('https://') ? url : `https://${url}`,
 			status: status || 'TO LEARN',
 			user: req.userId
@@ -53,7 +54,7 @@ router.post('/', verifyToken, async (req, res) => {
 // @desc Update post
 // @access Private
 router.put('/:id', verifyToken, async (req, res) => {
-	const { title, description, url, status } = req.body
+	const { title, description, typeDesc, url, status } = req.body
 
 	// Simple validation
 	if (!title)
@@ -65,6 +66,7 @@ router.put('/:id', verifyToken, async (req, res) => {
 		let updatedPost = {
 			title,
 			description: description || '',
+			typeDesc: typeDesc || 'VIDEO',
 			url: (url.startsWith('https://') ? url : `https://${url}`) || '',
 			status: status || 'TO LEARN'
 		}

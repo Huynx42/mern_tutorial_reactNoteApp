@@ -16,9 +16,10 @@ const AddPostModal = () => {
 	// State
 	const [newPost, setNewPost] = useState({
 		title: '',
-		description: 'video',
+		description: '',
 		url: '',
-		status: 'TO LEARN'
+		status: 'TO LEARN',
+		typeDesc: 'VIDEO',
 	})
 
 	const { title, description, url } = newPost
@@ -38,8 +39,7 @@ const AddPostModal = () => {
 	}
 
 	const resetAddPostData = () => {
-		console.log()
-		setNewPost({ title: '', description: 'video', url: '', status: 'TO LEARN' })
+		setNewPost({ title: '', description: '', url: '', status: 'TO LEARN', typeDesc: 'VIDEO' })
 		setShowAddPostModal(false)
 	}
 

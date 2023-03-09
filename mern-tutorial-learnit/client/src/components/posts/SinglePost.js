@@ -6,7 +6,7 @@ import ActionButtons from './ActionButtons'
 import { PostContext } from '../../contexts/PostContext'
 import { useContext } from 'react'
 
-const SinglePost = ({ post: { _id, status, title, description, url } }) => {
+const SinglePost = ({ post: { _id, status, title, description, typeDesc, url } }) => {
 	const { findPost, setShowUpdatePostModal } = useContext(
 		PostContext
 	);
@@ -32,14 +32,22 @@ const SinglePost = ({ post: { _id, status, title, description, url } }) => {
 					<Col>
 						<p className='post-title'>{title}</p>
 						<Badge
+							style={{cursor:"pointer", padding:'5px'}}
 							bg="light"
-							pill
+							className='post-button'
+							onClick={choosePost.bind(this, _id)}
+						>
+							{typeDesc}
+						</Badge>
+						<Badge
+							style={{cursor:"pointer", marginLeft:'10px', padding:'5px'}}
+							bg="light"
 							variant={
-								status === 'LEARNED'
-									? 'success'
-									: status === 'LEARNING'
-									? 'light'
-									: 'danger'
+							status === 'LEARNED'
+								? 'success'
+								: status === 'LEARNING'
+								? 'light'
+								: 'danger'
 							}
 							className='post-button'
 							onClick={choosePost.bind(this, _id)}
@@ -49,7 +57,7 @@ const SinglePost = ({ post: { _id, status, title, description, url } }) => {
 					</Col>
 				</Row>
 			</Card.Title>
-			<Card.Text>{description}</Card.Text>
+			{/* <Card.Text>{description}</Card.Text> */}
 			<Col className='text-right'>
 				<ActionButtons url={url} _id={_id} />
 			</Col>

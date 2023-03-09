@@ -9,6 +9,10 @@ const PostSchema = new Schema({
 	description: {
 		type: String
 	},
+	typeDesc: {
+		type: String,
+		enum: ['VIDEO', 'BOOK']
+	},
 	url: {
 		type: String
 	},
