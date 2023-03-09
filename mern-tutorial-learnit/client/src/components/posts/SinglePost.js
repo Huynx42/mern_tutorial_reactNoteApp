@@ -20,20 +20,20 @@ const SinglePost = ({ post: { _id, status, title, description, typeDesc, url } }
 		className='shadow'
 		border={
 			status === 'LEARNED'
-				? 'success'
+				? 'info'
 				: status === 'LEARNING'
-				? 'light'
+				? 'warning'
 				: 'danger'
 		}
 	>
 		<Card.Body>
-			<Card.Title>
+			<Card.Title style={{color: '#ffffff', 'font-size': '18px'}}>
 				<Row>
 					<Col>
 						<p className='post-title'>{title}</p>
 						<Badge
 							style={{cursor:"pointer", padding:'5px'}}
-							bg="light"
+							bg="info"
 							className='post-button'
 							onClick={choosePost.bind(this, _id)}
 						>
@@ -41,12 +41,12 @@ const SinglePost = ({ post: { _id, status, title, description, typeDesc, url } }
 						</Badge>
 						<Badge
 							style={{cursor:"pointer", marginLeft:'10px', padding:'5px'}}
-							bg="light"
+							bg="info"
 							variant={
 							status === 'LEARNED'
-								? 'success'
+								? 'info'
 								: status === 'LEARNING'
-								? 'light'
+								? 'warning'
 								: 'danger'
 							}
 							className='post-button'
@@ -54,13 +54,11 @@ const SinglePost = ({ post: { _id, status, title, description, typeDesc, url } }
 						>
 							{status}
 						</Badge>
+						<ActionButtons url={url} _id={_id} />
 					</Col>
 				</Row>
 			</Card.Title>
 			{/* <Card.Text>{description}</Card.Text> */}
-			<Col className='text-right'>
-				<ActionButtons url={url} _id={_id} />
-			</Col>
 		</Card.Body>
 	</Card>
 }
