@@ -64,14 +64,14 @@ const Dashboard = () => {
 	} else {
 		body = (
 			<>
-				<Row className='row-cols-1 row-cols-md-4 g-3 mx-auto mt-0'>
+				<Row className='row-cols-1 row-cols-md-4 g-2 mx-auto mt-0'>
 					{posts.map(post => {
-						if (post.title.length >= 10) {
-							post.title = post.title.slice(0,15).concat('...')
+						if (post.title.length >= 30) {
+							post.title = post.title.slice(0,30).concat('...')
 						};
-						if (post.description.length >= 40) {
-							post.description = post.description.slice(0,40).concat('...')
-						};
+						// if (post.description.length >= 40) {
+						// 	post.description = post.description.slice(0,40).concat('...')
+						// };
 						return <Col key={post._id} className='my-2'>
 							<SinglePost post={post} />
 						</Col>

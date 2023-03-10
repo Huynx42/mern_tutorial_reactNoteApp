@@ -40,7 +40,7 @@ const SinglePost = ({ post: { _id, status, title, description, typeDesc, url } }
 							{typeDesc}
 						</Badge>
 						<Badge
-							style={{cursor:"pointer", marginLeft:'10px', padding:'5px'}}
+							style={{cursor:"pointer", marginLeft:'10px', marginRight:'55px', padding:'5px'}}
 							bg="info"
 							variant={
 							status === 'LEARNED'
